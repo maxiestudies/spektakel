@@ -1,0 +1,18 @@
+#N canvas 184 170 450 300 12;
+#X obj 65 146 *~;
+#X obj 227 59 pack 0 20;
+#X obj 227 83 line~;
+#X obj 65 170 rev3~ 100 80 3000 20;
+#X floatatom 227 130 5 0 0 0 - - -;
+#X obj 105 226 dac~;
+#X obj 373 53 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 37 37 adc~ 3;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 0 0 1;
+#X connect 3 0 5 0;
+#X connect 3 1 5 1;
+#X connect 4 0 3 3;
+#X connect 6 0 1 0;
+#X connect 7 0 0 0;

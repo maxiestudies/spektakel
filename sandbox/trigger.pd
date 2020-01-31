@@ -1,0 +1,4 @@
+#N canvas 624 242 450 300 12;
+#X obj 145 133 array define buffer;
+#X obj 165 67 soundfiler;
+#X msg 213 30 read -resize x.wav buffer;

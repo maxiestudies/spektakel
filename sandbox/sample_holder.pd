@@ -1,0 +1,17 @@
+#N canvas 0 22 370 290 12;
+#X obj 57 133 soundfiler;
+#X obj 56 157 t f f;
+#X obj 88 183 / 44.1;
+#X text 143 156 calculate the soundfile length in ms, f 20;
+#X obj 88 208 s \$0-filelength;
+#X obj 57 58 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 57 105 read -resize Kb_ord_tief.wav \$1;
+#X obj 52 13 array define \$1 10000;
+#X obj 57 80 symbol \$1;
+#X connect 0 0 1 0;
+#X connect 1 1 2 0;
+#X connect 2 0 4 0;
+#X connect 5 0 8 0;
+#X connect 6 0 0 0;
+#X connect 8 0 6 0;

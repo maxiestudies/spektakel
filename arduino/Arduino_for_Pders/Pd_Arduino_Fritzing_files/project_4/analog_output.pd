@@ -1,0 +1,14 @@
+#N canvas 716 168 450 300 10;
+#X msg 43 27 devices;
+#X obj 43 149 comport;
+#X floatatom 68 48 5 0 0 0 - - -;
+#X msg 68 69 open \$1;
+#X msg 70 93 close;
+#X obj 72 120 hsl 128 15 0 255 0 0 empty empty 0_________________255
+2 8 0 10 -262144 -1 -1 5500 1;
+#X text 205 117 PWM;
+#X connect 0 0 1 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;

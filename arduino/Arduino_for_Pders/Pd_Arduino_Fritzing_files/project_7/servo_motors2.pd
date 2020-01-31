@@ -1,0 +1,49 @@
+#N canvas 116 120 615 314 10;
+#X msg 56 57 devices;
+#X obj 56 182 comport;
+#X floatatom 81 78 5 0 0 0 - - -;
+#X msg 81 99 open \$1;
+#X msg 82 124 close;
+#X obj 192 46 hsl 128 15 0 180 0 0 empty empty 0_________________180
+2 8 0 10 -262144 -1 -1 0 1;
+#X obj 189 68 i;
+#X obj 189 161 pack;
+#X obj 242 86 hsl 128 15 0 180 0 0 empty empty 0_________________180
+2 8 0 10 -262144 -1 -1 0 1;
+#X obj 239 106 i;
+#X obj 239 128 t b f;
+#X msg 189 183 print \$1a\$2b;
+#X text 191 29 Servo1 degrees;
+#X text 240 69 Servo2 degrees;
+#X obj 386 48 hsl 128 15 0 180 0 0 empty empty 0_________________180
+2 8 0 10 -262144 -1 -1 0 1;
+#X obj 383 68 i;
+#X obj 459 92 hsl 128 15 0 180 0 0 empty empty 0_________________180
+2 8 0 10 -262144 -1 -1 0 1;
+#X obj 456 112 i;
+#X msg 456 134 print \$1b;
+#X msg 383 90 print \$1a;
+#X text 382 31 Servo1 degrees;
+#X text 455 76 Servo2 degrees;
+#X obj 189 205 s toComport;
+#X obj 79 154 r toComport;
+#X obj 383 182 s toComport;
+#X connect 0 0 1 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 11 0;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 7 0;
+#X connect 10 1 7 1;
+#X connect 11 0 22 0;
+#X connect 14 0 15 0;
+#X connect 15 0 19 0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 0;
+#X connect 18 0 24 0;
+#X connect 19 0 24 0;
+#X connect 23 0 1 0;

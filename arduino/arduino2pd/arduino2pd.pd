@@ -1,0 +1,61 @@
+#N canvas 282 206 959 844 10;
+#X obj 516 277 print ERROR;
+#X obj 405 244 convert.ascii2pd CR;
+#N canvas 712 205 905 623 in&out 0;
+#X obj 114 116 list-extend;
+#X obj 191 77 sel 10;
+#X msg 191 185 48 32;
+#X obj 190 157 prepend set;
+#X obj 193 236 gate;
+#X msg 126 209 0;
+#X msg 160 207 1;
+#X obj 116 30 inlet;
+#X obj 198 268 outlet;
+#X obj 87 80 route 10;
+#X connect 0 0 3 0;
+#X connect 1 0 0 1;
+#X connect 1 0 6 0;
+#X connect 1 0 2 0;
+#X connect 1 1 5 0;
+#X connect 2 0 4 1;
+#X connect 3 0 2 0;
+#X connect 4 0 8 0;
+#X connect 5 0 4 0;
+#X connect 6 0 4 0;
+#X connect 7 0 1 0;
+#X connect 7 0 9 0;
+#X connect 9 1 0 0;
+#X restore 405 207 pd in&out;
+#X obj 380 323 unpack 0 0 0 0 0 0 0;
+#X floatatom 380 369 5 0 0 0 - - -;
+#X floatatom 400 398 5 0 0 0 - - -;
+#X floatatom 420 369 5 0 0 0 - - -;
+#X obj 405 172 comport 2 9600;
+#X msg 371 123 devices;
+#X text 503 166 < change the numer 2 to the comport used by Arduino
+;
+#X text 434 123 < Click me to see what is connected to serial port
+;
+#X text 479 208 < click me to see what's in the sub patch;
+#X text 538 245 < don't worry about this one!;
+#X floatatom 440 399 5 0 0 0 - - -;
+#X floatatom 464 368 5 0 0 0 - - -;
+#X floatatom 484 399 5 0 0 0 - - -;
+#X text 63 42 Arduino 2 Pd - communication protocole by recyclism;
+#X text 62 79 NOTE: You need to have the file convert.ascii2pd.pd in
+the same folder as this patch;
+#X text 516 325 < unpack each sensor vaule (or switches connected)
+;
+#X text 504 178 < change the numer 9600 to the boudrate used by Arduino
+;
+#X connect 1 0 3 0;
+#X connect 1 2 0 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 3 1 5 0;
+#X connect 3 2 6 0;
+#X connect 3 3 13 0;
+#X connect 3 4 14 0;
+#X connect 3 5 15 0;
+#X connect 7 0 2 0;
+#X connect 8 0 7 0;

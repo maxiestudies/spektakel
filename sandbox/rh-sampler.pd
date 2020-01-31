@@ -1,0 +1,45 @@
+#N canvas 382 76 578 475 12;
+#X obj 56 260 f;
+#X obj 56 284 pack 0 0;
+#X obj 24 155 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 24 307 line~;
+#X obj 24 226 del;
+#X obj 24 175 t b b;
+#X msg 24 253 0;
+#X obj 24 130 spigot;
+#X obj 24 52 t b b b;
+#X obj 24 77 del;
+#X msg 54 77 0;
+#X msg 24 102 1;
+#X text 88 53 avoid that more than 1 bang goes thru at a time. The
+first bang goes thru \, the second closes the gate and the third opens
+the gate again after the sound finished playing;
+#X text 67 150 trigger sound and reset line~ after sound is played
+, f 19;
+#X obj 24 361 outlet~;
+#X obj 24 26 inlet;
+#X obj 69 27 r filelength;
+#X obj 42 201 r filelength;
+#X obj 109 260 r filelength;
+#X obj 24 334 tabread4~ \$1;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
+#X connect 2 0 5 0;
+#X connect 3 0 19 0;
+#X connect 4 0 6 0;
+#X connect 5 0 4 0;
+#X connect 5 1 0 0;
+#X connect 6 0 3 0;
+#X connect 7 0 2 0;
+#X connect 8 0 9 0;
+#X connect 8 1 10 0;
+#X connect 8 2 7 0;
+#X connect 9 0 11 0;
+#X connect 10 0 7 1;
+#X connect 11 0 7 1;
+#X connect 15 0 8 0;
+#X connect 16 0 9 1;
+#X connect 17 0 4 1;
+#X connect 18 0 1 1;
+#X connect 19 0 14 0;

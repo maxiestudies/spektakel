@@ -7,6 +7,7 @@
  * Resistor effects sensitivity, experiment with values, 50K - 50M. Larger resistor values yield larger sensor values.
  * Receive pin is the sensor pin - try different amounts of foil/metal on this pin
  */
+#define ARRLENGTH 10
 
 CapacitiveSensor   cs_3 = CapacitiveSensor(2,3);
 CapacitiveSensor   cs_4 = CapacitiveSensor(2,4);        // 10M resistor between pins 2 & 4, pin 4 is sensor pin, add a wire and or foil if desired
@@ -18,7 +19,7 @@ CapacitiveSensor   cs_9 = CapacitiveSensor(2,9);
 CapacitiveSensor   cs_10 = CapacitiveSensor(2,10);
 CapacitiveSensor   cs_11 = CapacitiveSensor(2,11);
 CapacitiveSensor   cs_12 = CapacitiveSensor(2,12);
-byte output[10] = {0};
+byte output[ARRLENGTH] = {0};
 
 
 void setup()                    
@@ -42,13 +43,12 @@ void loop()
     output[8] =  cs_11.capacitiveSensor(30);
     output[9] =  cs_12.capacitiveSensor(30);
     
-//    for(int i = 0; i <= sizeof(output)/sizeof(byte); i++){
-//      Serial.print(output[i]);
-//      Serial.print("\t");
-//    }
-//    Serial.println();
+    for(int i = 0; i < ARRLENGTH; i++){
+      constrain(output[i], 0, 250);
+    }
 
-    Serial.write(output, 10);                  // write to serial line
 
+    Serial.write(output, 10);             // write to serial line
+    Serial.write(255);                    // write a 255 value to restart the counter in the pd patch 
     delay(1);                             // arbitrary delay to limit data to serial port 
 }

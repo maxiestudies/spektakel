@@ -1,8 +1,8 @@
-#N canvas 134 113 923 516 12;
+#N canvas 284 62 923 363 12;
 #X declare -path abstractions;
 #X obj 123 57 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 154 59 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 154 57 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #N canvas 162 23 824 690 sensors 0;
 #X msg 336 33 open 4;
@@ -113,37 +113,37 @@
 #X connect 48 0 4 0;
 #X connect 48 1 49 0;
 #X connect 49 0 8 0;
-#X restore 119 19 pd sensors;
+#X restore 119 20 pd sensors;
 #X f 43;
-#X obj 187 58 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 187 57 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 218 60 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 218 57 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 256 61 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 256 57 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 287 63 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 287 57 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 320 62 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 320 57 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 351 64 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 351 57 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 387 60 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 387 57 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 95 56 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 95 57 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 267 297 noteout;
-#X msg 124 136 61;
-#X msg 159 135 62;
-#X msg 197 136 63;
-#X msg 233 134 64;
+#X obj 269 287 noteout;
+#X msg 124 137 61;
+#X msg 159 137 62;
+#X msg 197 137 63;
+#X msg 233 137 64;
 #X msg 269 137 65;
-#X msg 306 139 66;
-#X msg 342 142 67;
-#X msg 379 141 68;
-#X msg 413 142 69;
-#X floatatom 529 145 5 0 0 0 - - -;
-#X obj 690 16 declare -path abstractions;
-#X msg 89 136 60;
+#X msg 306 137 66;
+#X msg 342 137 67;
+#X msg 379 137 68;
+#X msg 413 137 69;
+#X floatatom 402 192 5 0 0 0 - - -;
+#X obj 690 17 declare -path abstractions;
+#X msg 89 137 60;
 #N canvas 399 130 621 385 setnotes 0;
 #X obj 203 110 until;
 #X obj 203 134 f;
@@ -194,21 +194,20 @@
 #X connect 22 7 17 0;
 #X connect 22 8 18 0;
 #X connect 22 9 19 0;
-#X restore 451 44 pd setnotes;
+#X restore 451 45 pd setnotes;
 #X f 31;
-#X floatatom 451 12 5 0 0 0 - - -;
-#X text 494 13 Set starting midi note;
-#X text 574 144 Set note duration;
-#X msg 529 168 all \$1;
-#X obj 202 233 clone makenote_a 10 127 500;
-#X msg 229 188 next \$1;
-#X floatatom 140 194 5 0 0 0 - - -;
-#X obj 201 264 unpack f f;
-#X obj 372 269 unpack f f;
-#X connect 0 0 12 0;
+#X floatatom 451 13 5 0 0 0 - - -;
+#X text 494 14 Set starting midi note;
+#X text 447 191 Set note duration;
+#X msg 402 215 all \$1;
+#X obj 202 234 clone makenote_a 10 127 500;
+#X msg 202 208 next \$1;
+#X obj 202 259 unpack f f;
+#X obj 388 259 unpack f f;
 #X connect 2 0 10 0;
 #X connect 2 0 23 0;
 #X connect 2 1 0 0;
+#X connect 2 1 12 0;
 #X connect 2 2 1 0;
 #X connect 2 2 13 0;
 #X connect 2 3 3 0;
@@ -248,9 +247,8 @@
 #X connect 24 9 20 0;
 #X connect 25 0 24 0;
 #X connect 28 0 29 1;
-#X connect 29 0 32 0;
-#X connect 29 1 33 0;
+#X connect 29 0 31 0;
+#X connect 29 1 32 0;
 #X connect 30 0 29 0;
-#X connect 31 0 30 0;
-#X connect 32 1 11 0;
-#X connect 33 0 11 1;
+#X connect 31 1 11 0;
+#X connect 32 1 11 1;

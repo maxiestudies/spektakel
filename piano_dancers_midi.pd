@@ -1,4 +1,4 @@
-#N canvas 236 236 850 485 12;
+#N canvas 236 228 850 485 12;
 #X declare -path ./../audio;
 #X obj 24 382 declare -path ./../audio;
 #X obj 123 57 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1

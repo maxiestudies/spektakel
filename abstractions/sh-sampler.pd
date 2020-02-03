@@ -1,0 +1,36 @@
+#N canvas 485 185 548 290 12;
+#X obj 57 133 soundfiler;
+#X obj 56 157 t f f;
+#X obj 88 183 / 44.1;
+#X text 143 156 calculate the soundfile length in ms, f 20;
+#X obj 57 58 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 57 80 symbol \$1;
+#X obj 88 208 s filelength;
+#X obj 317 217 noise~;
+#X obj 317 244 tabwrite~ \$1;
+#X obj 371 170 del 1000;
+#X obj 370 129 t b b;
+#X obj 369 102 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 424 205 start;
+#X msg 344 195 stop;
+#X obj 52 6 array define \$1 10000;
+#X obj 342 29 inlet;
+#X msg 57 105 read -resize sm_gl_sh.wav \$1;
+#X obj 58 34 r fill;
+#X connect 0 0 1 0;
+#X connect 1 1 2 0;
+#X connect 2 0 6 0;
+#X connect 4 0 5 0;
+#X connect 5 0 16 0;
+#X connect 7 0 8 0;
+#X connect 9 0 13 0;
+#X connect 10 0 9 0;
+#X connect 10 1 12 0;
+#X connect 11 0 10 0;
+#X connect 12 0 8 0;
+#X connect 13 0 8 0;
+#X connect 15 0 10 0;
+#X connect 16 0 0 0;
+#X connect 17 0 4 0;

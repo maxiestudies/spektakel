@@ -1,3 +1,4 @@
+./audio/numbers/01.one.wav numbers1;
 ./audio/numbers/02.two.wav numbers2;
 ./audio/numbers/03.three.wav numbers3;
 ./audio/numbers/04.four.wav numbers4;

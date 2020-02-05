@@ -1,0 +1,10 @@
+sampler1 set 1_Heart-1;
+sampler2 set 1_Heart-2;
+sampler3 set 1_Heart-3;
+sampler4 set 1_Heart-4;
+sampler5 set 1_Heart-5;
+sampler6 set 1_Heart-6;
+sampler7 set 1_Heart-7;
+sampler8 set 1_Heart-8;
+sampler9 set 1_Heart-9;
+sampler10 set 1_Heart-10;

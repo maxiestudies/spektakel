@@ -1,27 +1,17 @@
-#N canvas 251 122 850 485 12;
+#N canvas 93 111 1187 602 12;
 #X declare -path abstractions;
-#X declare -path audio;
-#X obj 161 69 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X declare -path ./audio/numbers;
+#X declare -path ./audio;
+#X declare -path .audio/finished;
+#X obj 81 69 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#N canvas 0 22 481 495 soundsets 0;
-#X obj 101 101 cnv 15 198 58 empty empty Sound-Sets 60 12 1 14 -232576
+#N canvas 417 91 481 495 soundsets 0;
+#X obj 101 101 cnv 15 228 58 empty empty Sound-Sets 60 12 1 14 -232576
 -66577 0;
 #X obj 103 137 bng 15 250 50 0 empty empty 1 3 -7 1 14 -262144 -1 -1
 ;
 #X obj 123 137 bng 15 250 50 0 empty empty 2 3 -7 1 14 -262144 -1 -1
 ;
-#N canvas 322 253 585 300 four 0;
-#X obj 75 61 inlet;
-#X obj 85 150 qlist;
-#X obj 50 117 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X msg 85 122 read ./audio/2_intro_mono/filenames.txt;
-#X obj 85 97 loadbang;
-#X connect 0 0 2 0;
-#X connect 2 0 1 0;
-#X connect 3 0 1 0;
-#X connect 4 0 3 0;
-#X restore 163 166 pd four;
 #N canvas 0 22 450 300 one 0;
 #X obj 95 93 inlet;
 #X msg 95 124 \; one snare.wav \; two snare.wav \; three snare.wav
@@ -31,43 +21,7 @@
 fifteen snare.wav \; sixteen snare.wav \; seventeen snare.wav \; eighteen
 snare.wav \; nineteen snare.wav \; twenty snare.wav \;;
 #X connect 0 0 1 0;
-#X restore 103 167 pd one;
-#N canvas 322 253 585 300 three 0;
-#X obj 37 66 inlet;
-#X msg 73 107 read ./audio/1_intro_mono/filenames.txt;
-#X obj 73 135 qlist;
-#X obj 38 102 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 80 81 loadbang;
-#X connect 0 0 3 0;
-#X connect 1 0 2 0;
-#X connect 3 0 2 0;
-#X connect 4 0 1 0;
-#X restore 143 220 pd three;
-#N canvas 322 253 585 300 five 0;
-#X obj 75 61 inlet;
-#X obj 85 150 qlist;
-#X obj 50 117 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 85 97 loadbang;
-#X msg 85 122 read ./audio/3_intro_mono/filenames.txt;
-#X connect 0 0 2 0;
-#X connect 2 0 1 0;
-#X connect 3 0 4 0;
-#X connect 4 0 1 0;
-#X restore 183 192 pd five;
-#N canvas 322 253 585 300 two 0;
-#X obj 37 66 inlet;
-#X obj 73 135 qlist;
-#X obj 38 102 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 80 81 loadbang;
-#X msg 73 107 read ./audio/numbers/filenames.txt;
-#X connect 0 0 2 0;
-#X connect 2 0 1 0;
-#X connect 3 0 4 0;
-#X connect 4 0 1 0;
-#X restore 123 193 pd two;
+#X restore 195 441 pd one;
 #X obj 143 137 bng 15 250 50 0 empty empty 3 3 -7 1 14 -262144 -1 -1
 ;
 #X obj 163 137 bng 15 250 50 0 empty empty 4 3 -7 1 14 -262144 -1 -1
@@ -84,13 +38,138 @@ snare.wav \; nineteen snare.wav \; twenty snare.wav \;;
 ;
 #X obj 283 137 bng 15 250 50 0 empty empty 10 -1 -7 1 14 -262144 -1
 -1;
-#X connect 2 0 7 0;
-#X connect 8 0 5 0;
-#X connect 9 0 3 0;
-#X connect 10 0 6 0;
-#X coords 0 -1 1 1 200 60 2 100 100;
+#N canvas 322 253 616 378 numbers 0;
+#X obj 37 66 inlet;
+#X obj 73 135 qlist;
+#X obj 38 102 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 80 81 loadbang;
+#X obj 353 13 array define numbers1 160163;
+#X obj 353 43 array define numbers2 160163;
+#X obj 353 73 array define numbers3 160163;
+#X obj 353 103 array define numbers4 160163;
+#X obj 353 133 array define numbers5 160163;
+#X obj 353 163 array define numbers6 160163;
+#X obj 353 193 array define numbers7 160163;
+#X obj 353 223 array define numbers8 160163;
+#X obj 353 253 array define numbers9 160163;
+#X obj 353 283 array define numbers10 160163;
+#X msg 73 107 read ./textfiles/set_numbers.txt;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 3 0 14 0;
+#X connect 14 0 1 0;
+#X restore 343 176 pd numbers;
+#N canvas 322 253 585 300 Intro_1 0;
+#X obj 37 66 inlet;
+#X obj 73 135 qlist;
+#X obj 38 102 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 80 81 loadbang;
+#X msg 73 107 read ./textfiles/set_Intro_1.txt;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X restore 103 167 pd Intro_1;
+#N canvas 322 253 585 300 Intro_2 0;
+#X obj 75 61 inlet;
+#X obj 85 150 qlist;
+#X obj 50 117 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 85 97 loadbang;
+#X msg 85 122 read ./textfiles/set_Intro_2.txt;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X restore 120 192 pd Intro_2;
+#N canvas 322 253 585 300 Intro_3 0;
+#X obj 75 61 inlet;
+#X obj 85 150 qlist;
+#X obj 50 117 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 85 97 loadbang;
+#X msg 85 122 read ./textfiles/set_Intro_3.txt;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X restore 144 218 pd Intro_3;
+#N canvas 528 262 585 219 Heart_1 0;
+#X obj 37 66 inlet;
+#X obj 73 135 qlist;
+#X obj 38 102 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 80 81 loadbang;
+#X msg 73 107 read ./textfiles/set_Heart_1.txt;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X restore 162 244 pd Heart_1;
+#N canvas 530 454 585 219 Heart_2 0;
+#X obj 37 66 inlet;
+#X obj 73 135 qlist;
+#X obj 38 102 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 80 81 loadbang;
+#X msg 73 107 read ./textfiles/set_Heart_2.txt;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X restore 183 166 pd Heart_2;
+#X obj 312 137 bng 15 250 50 0 empty empty T 2 -7 1 14 -260097 -1 -1
+;
+#N canvas 530 453 585 219 Extro_1 0;
+#X obj 37 66 inlet;
+#X obj 73 135 qlist;
+#X obj 38 102 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 80 81 loadbang;
+#X msg 73 107 read ./textfiles/set_Extro_1.txt;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X restore 201 191 pd Extro_1;
+#N canvas 530 453 585 219 Extro_2 0;
+#X obj 37 66 inlet;
+#X obj 73 135 qlist;
+#X obj 38 102 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 80 81 loadbang;
+#X msg 73 107 read ./textfiles/set_Extro_2.txt;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X restore 226 217 pd Extro_2;
+#N canvas 530 453 585 219 Extro_3 0;
+#X obj 37 66 inlet;
+#X obj 73 135 qlist;
+#X obj 38 102 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 80 81 loadbang;
+#X msg 73 107 read ./textfiles/set_Extro_3.txt;
+#X connect 0 0 2 0;
+#X connect 2 0 1 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X restore 246 243 pd Extro_3;
+#X connect 1 0 13 0;
+#X connect 2 0 14 0;
+#X connect 4 0 15 0;
+#X connect 5 0 16 0;
+#X connect 6 0 17 0;
+#X connect 7 0 19 0;
+#X connect 8 0 20 0;
+#X connect 9 0 21 0;
+#X connect 18 0 12 0;
+#X coords 0 -1 1 1 230 60 2 100 100;
 #X restore 450 20 pd soundsets;
-#X obj 192 71 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 112 69 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #N canvas 103 22 1177 690 sensors 0;
 #X msg 320 38 open 4;
@@ -197,44 +276,83 @@ snare.wav \; nineteen snare.wav \; twenty snare.wav \;;
 #X connect 47 7 36 0;
 #X connect 47 8 37 0;
 #X connect 47 9 38 0;
-#X restore 121 24 pd sensors;
+#X restore 41 24 pd sensors;
 #X f 43;
-#X obj 225 70 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 145 69 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 256 72 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 176 69 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 294 73 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 214 69 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 325 75 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 245 69 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 358 74 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 278 69 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 389 76 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 309 69 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 425 72 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 345 69 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 127 69 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 47 69 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 327 365 +~;
-#X obj 325 427 dac~;
+#X obj 247 372 +~;
+#X obj 254 495 dac~;
 #X obj 737 29 declare -path abstractions;
-#X obj 736 55 declare -path audio;
-#X obj 125 93 rh-pianodance kick.wav sampler1;
-#X obj 170 118 rh-pianodance snare.wav sampler2;
-#X obj 205 146 rh-pianodance kick.wav sampler3;
-#X obj 244 174 rh-pianodance snare.wav sampler4;
-#X obj 279 202 rh-pianodance kick.wav sampler5;
-#X obj 321 233 rh-pianodance snare.wav sampler6;
-#X obj 356 261 rh-pianodance kick.wav sampler7;
-#X obj 391 289 rh-pianodance snare.wav sampler8;
-#X obj 426 317 rh-pianodance kick.wav sampler9;
-#X obj 469 346 rh-pianodance snare.wav sampler10;
-#X obj 327 389 hip~ 10;
-#X text 534 117 Preset 1: Empty \; Preset 2: Numbers (for testing)
-\; Preset 3: Intro_1 \; Preset 4: Intro_2 \; Preset 5: Intro_3, f
-33;
-#X connect 0 0 17 0;
-#X connect 2 0 18 0;
+#X obj 247 423 hip~ 10;
+#X obj 247 397 *~ 0.5;
+#X obj 736 55 declare -path ./audio/numbers;
+#X obj 45 99 rh-pianodance 01.one.wav sampler1;
+#X obj 90 125 rh-pianodance 02.two.wav sampler2;
+#X obj 125 153 rh-pianodance 03.three.wav sampler3;
+#X obj 164 181 rh-pianodance 04.four.wav sampler4;
+#X obj 200 209 rh-pianodance 05.five.wav sampler5;
+#X obj 241 240 rh-pianodance 06.six.wav sampler6;
+#X obj 276 268 rh-pianodance 07.seven.wav sampler7;
+#X obj 311 296 rh-pianodance 08.eight.wav sampler8;
+#X obj 345 324 rh-pianodance 09.nine.wav sampler9;
+#X obj 389 353 rh-pianodance 10.ten.wav sampler10;
+#X text 665 113 Preset 1: Intro_1 \; Preset 2: Intro_2 \; Preset 3:
+Intro_3 \; Preset 4: Heart_1 \; Preset 5: Heart_2 \; Preset 6: Extro_1
+\; Preset 7: Extro_2 \; Preset 8: Extro_3 \; Preset 9: Empty \; Preset
+10: Empty \; Preset T: Numbers (Testing);
+#X obj 736 79 declare -path ./audio;
+#N canvas 192 35 1016 377 init 1;
+#X msg 204 169 160363;
+#X obj 204 198 s max_arr_length;
+#X obj 124 223 s loadsamps;
+#X obj 125 189 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 266 34 inlet;
+#X obj 348 248 soundfiler;
+#X obj 347 272 t f f;
+#X msg 348 163 line 0 \, bang;
+#X obj 348 192 text sequence \$0-loadarrays;
+#X obj 430 92 text define \$0-loadarrays;
+#X msg 348 221 read -resize \$1 \$2;
+#X msg 430 67 read ./textfiles/loadarrs.txt;
+#X obj 266 58 t b b b b;
+#X connect 0 0 1 0;
+#X connect 3 0 2 0;
+#X connect 4 0 12 0;
+#X connect 5 0 6 0;
+#X connect 7 0 8 0;
+#X connect 8 0 10 0;
+#X connect 10 0 5 0;
+#X connect 11 0 9 0;
+#X connect 12 0 2 0;
+#X connect 12 1 0 0;
+#X connect 12 2 7 0;
+#X connect 12 3 11 0;
+#X restore 795 394 pd init;
+#X obj 795 370 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 961 290 extro_arrs;
+#X obj 999 331 intro_arrs;
+#X obj 1038 379 heart_arrs;
+#X obj 950 15 declare -path .audio/finished;
+#X obj 76 229 env~;
+#X floatatom 76 253 5 0 0 0 - - -;
+#X connect 0 0 19 0;
+#X connect 2 0 20 0;
 #X connect 3 0 11 0;
 #X connect 3 1 0 0;
 #X connect 3 2 2 0;
@@ -245,24 +363,28 @@ snare.wav \; nineteen snare.wav \; twenty snare.wav \;;
 #X connect 3 7 8 0;
 #X connect 3 8 9 0;
 #X connect 3 9 10 0;
-#X connect 4 0 19 0;
-#X connect 5 0 20 0;
-#X connect 6 0 21 0;
-#X connect 7 0 22 0;
-#X connect 8 0 23 0;
-#X connect 9 0 24 0;
-#X connect 10 0 25 0;
-#X connect 11 0 16 0;
-#X connect 12 0 26 0;
-#X connect 16 0 12 1;
-#X connect 17 0 12 1;
-#X connect 18 0 12 0;
+#X connect 4 0 21 0;
+#X connect 5 0 22 0;
+#X connect 6 0 23 0;
+#X connect 7 0 24 0;
+#X connect 8 0 25 0;
+#X connect 9 0 26 0;
+#X connect 10 0 27 0;
+#X connect 11 0 18 0;
+#X connect 12 0 16 0;
+#X connect 15 0 13 0;
+#X connect 15 0 13 1;
+#X connect 16 0 15 0;
+#X connect 18 0 12 1;
+#X connect 18 0 36 0;
 #X connect 19 0 12 1;
 #X connect 20 0 12 0;
-#X connect 21 0 12 0;
+#X connect 21 0 12 1;
 #X connect 22 0 12 0;
 #X connect 23 0 12 0;
-#X connect 24 0 12 1;
-#X connect 25 0 12 1;
-#X connect 26 0 13 0;
-#X connect 26 0 13 1;
+#X connect 24 0 12 0;
+#X connect 25 0 12 0;
+#X connect 26 0 12 1;
+#X connect 27 0 12 1;
+#X connect 31 0 30 0;
+#X connect 36 0 37 0;

@@ -1,0 +1,9 @@
+./audio/numbers/02.two.wav numbers2;
+./audio/numbers/03.three.wav numbers3;
+./audio/numbers/04.four.wav numbers4;
+./audio/numbers/05.five.wav numbers5;
+./audio/numbers/06.six.wav numbers6;
+./audio/numbers/07.seven.wav numbers7;
+./audio/numbers/08.eight.wav numbers8;
+./audio/numbers/09.nine.wav numbers9;
+./audio/numbers/10.ten.wav numbers10;

@@ -1,0 +1,10 @@
+sampler1 set 3_Extro-1;
+sampler2 set 3_Extro-2;
+sampler3 set 3_Extro-3;
+sampler4 set 3_Extro-4;
+sampler5 set 3_Extro-5;
+sampler6 set 3_Extro-6;
+sampler7 set 3_Extro-7;
+sampler8 set 3_Extro-8;
+sampler9 set 3_Extro-9;
+sampler10 set 3_Extro-10;

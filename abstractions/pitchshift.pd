@@ -45,7 +45,7 @@
 #X text 314 240 (msec);
 #X obj 237 139 max 1;
 #X text 55 265 rotation freq;
-#X obj 138 52 inlet;
+#X obj 466 30 inlet;
 #X obj 19 490 outlet~;
 #X obj 268 11 inlet~;
 #X obj 264 42 delwrite~ \$0-buff 5000;

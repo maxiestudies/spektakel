@@ -1,0 +1,13 @@
+#N canvas 363 90 587 317 12;
+#X obj 241 43 inlet~;
+#X obj 281 241 outlet~;
+#X obj 109 249 env~;
+#X floatatom 109 273 5 0 0 0 - - -;
+#X msg 393 82 next \$1;
+#X obj 398 8 inlet;
+#X obj 233 112 clone voc_voice 3 260;
+#X connect 0 0 6 0;
+#X connect 2 0 3 0;
+#X connect 4 0 6 1;
+#X connect 5 0 4 0;
+#X connect 6 0 1 0;

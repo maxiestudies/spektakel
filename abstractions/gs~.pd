@@ -67,8 +67,8 @@
 #X obj 47 288 vd~ \$0-voice;
 #X obj 607 235 random 3000;
 #X obj 607 256 + 300;
-#X obj 662 268 random 40;
 #X obj 662 292 - 12;
+#X obj 662 268 random 400;
 #X connect 0 0 11 0;
 #X connect 0 0 12 0;
 #X connect 1 0 24 1;
@@ -85,7 +85,7 @@
 #X connect 7 0 22 0;
 #X connect 7 0 27 0;
 #X connect 8 0 10 0;
-#X connect 8 0 44 0;
+#X connect 8 0 43 0;
 #X connect 8 1 0 0;
 #X connect 9 0 0 0;
 #X connect 9 1 11 1;
@@ -111,15 +111,15 @@
 #X connect 31 0 28 1;
 #X connect 33 0 34 0;
 #X connect 33 0 41 0;
-#X connect 33 0 43 0;
+#X connect 33 0 44 0;
 #X connect 34 0 31 0;
 #X connect 35 0 41 0;
-#X connect 35 0 43 0;
+#X connect 35 0 44 0;
 #X connect 36 0 5 0;
 #X connect 38 0 28 0;
 #X connect 40 0 3 0;
 #X connect 41 0 42 0;
 #X connect 42 0 8 0;
-#X connect 43 0 44 0;
-#X connect 44 0 10 0;
+#X connect 43 0 10 0;
+#X connect 44 0 43 0;
 #X coords 0 552 1 551 100 170 0;

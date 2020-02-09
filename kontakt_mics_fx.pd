@@ -1,9 +1,9 @@
-#N canvas 177 126 1103 572 10;
+#N canvas 24 71 1047 572 10;
 #X declare -path abstractions;
 #X declare -path audio;
 #X obj 558 4 declare -path abstractions;
 #X obj 558 25 declare -path audio;
-#X obj 345 431 dac~;
+#X obj 826 125 dac~;
 #X obj 24 336 *~;
 #X obj 40 313 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -12,8 +12,8 @@
 #X obj 28 498 *~;
 #X obj 49 477 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 946 171 *~;
-#X obj 959 149 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 770 204 *~;
+#X obj 783 182 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 47 109 gs~;
 #X obj 33 58 *~;
@@ -26,11 +26,10 @@
 #X obj 20 139 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 396 224 *~;
-#X obj 417 203 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 417 203 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 945 212 filterbank;
 #X text 92 78 <- Random parameter change;
-#X obj 385 180 adc~ 1;
+#X obj 821 10 adc~ 1;
 #X obj 821 32 adc~ 2;
 #X obj 821 54 adc~ 3;
 #X obj 821 76 adc~ 4;
@@ -44,8 +43,7 @@
 #X floatatom 78 418 5 0 0 0 - - -;
 #X text 120 420 <- Semitones;
 #X floatatom 127 513 5 0 0 0 - - -;
-#X text 171 515 Modulation Frequency (Hz);
-#N canvas 353 22 614 482 vocoderparams 1;
+#N canvas 353 22 614 482 vocoderparams 0;
 #X floatatom 104 105 5 0 0 1 Grundton - -;
 #X obj 306 340 f;
 #X obj 306 364 t f f f f;
@@ -77,7 +75,7 @@
 #X obj 215 287 t b b;
 #X obj 347 274 t b f;
 #X obj 222 51 loadbang;
-#N canvas 30 95 779 546 vocrev_nocrush 1;
+#N canvas 30 95 779 546 vocrev_nocrush 0;
 #X obj 51 345 vocoder;
 #X obj 93 443 *~;
 #X obj 164 421 line~;
@@ -185,23 +183,32 @@
 #X connect 27 0 26 0;
 #X coords 0 -1 1 1 90 125 2 100 100;
 #X restore 389 260 pd vocoderparams;
+#X text 495 265 "Vocoder" \; Grundton eingeben \; Stimmenanordnung
+auswähelen \;;
+#X text 171 515 <- Modulation Frequency (Hz);
+#X obj 769 245 rev3~ 100 90 3000 20;
+#X floatatom 838 214 5 0 95 0 - - -;
+#X floatatom 838 191 5 0 0 0 - - -;
+#X text 876 193 cutoff freq;
+#X text 876 213 length (100 = freeze!!);
+#X text 879 9 Inputs;
+#X text 864 126 Output;
 #X connect 3 0 5 0;
 #X connect 4 0 3 1;
 #X connect 7 0 6 0;
 #X connect 8 0 7 1;
-#X connect 9 0 20 0;
+#X connect 9 0 36 0;
 #X connect 10 0 9 1;
 #X connect 12 0 11 0;
 #X connect 13 0 12 1;
 #X connect 14 0 11 1;
 #X connect 16 0 15 0;
 #X connect 17 0 16 1;
-#X connect 18 0 35 0;
+#X connect 18 0 33 0;
 #X connect 19 0 18 1;
-#X connect 22 0 18 0;
-#X connect 29 0 27 0;
-#X connect 30 0 29 1;
-#X connect 31 0 27 1;
-#X connect 33 0 6 1;
-#X connect 35 0 2 0;
-#X connect 35 0 2 1;
+#X connect 28 0 26 0;
+#X connect 29 0 28 1;
+#X connect 30 0 26 1;
+#X connect 32 0 6 1;
+#X connect 37 0 36 3;
+#X connect 38 0 36 4;
